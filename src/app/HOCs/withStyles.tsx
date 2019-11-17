@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import NamedStyles = StyleSheet.NamedStyles;
 
 interface WithStylesProps {
   styles: object

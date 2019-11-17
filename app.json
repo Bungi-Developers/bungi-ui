@@ -17,7 +17,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "entryPoint": "./src/app/index.js",
+    "entryPoint": "./src/app/index.ts",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
