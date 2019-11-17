@@ -13,6 +13,7 @@ interface WithStylesProps {
  */
 export const withStyles = (styles: object) =>
   <P extends object>(Component: React.ComponentType<P & WithStylesProps>) => {
+    // @ts-ignore
     const styleSheet = StyleSheet.create<NamedStyles<object>>(styles);
     return (props: object) => {
       return <Component {...props as P} styles={styleSheet} />;
