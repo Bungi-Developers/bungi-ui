@@ -3,7 +3,13 @@ import { compose } from "redux";
 import { Text, View } from "react-native";
 import { withStyles } from "../HOCs";
 
-export const User = ({ styles }) => (
+interface Props {
+  styles: {
+    [index: string]: object
+  }
+}
+
+export const User: React.FC<Props> = ({ styles }) => (
   <View style={styles.container}>
     <Text style={styles.text}>User</Text>
   </View>

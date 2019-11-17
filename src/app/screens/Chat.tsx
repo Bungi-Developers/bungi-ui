@@ -3,7 +3,13 @@ import { compose } from "redux";
 import { Text, View } from "react-native";
 import { withStyles } from "../HOCs";
 
-export const Chat = ({ styles }) => (
+interface Props {
+  styles: {
+    [index: string]: object
+  }
+}
+
+export const Chat: React.FC<Props> = ({ styles }) => (
   <View style={styles.container}>
     <Text style={styles.text}>Chat</Text>
   </View>
