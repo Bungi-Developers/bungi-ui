@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { compose } from "redux";
 import { Text, View } from "react-native";
 import { withStyles } from "../HOCs";
