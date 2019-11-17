@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "clean": "prettier --write 'src/app/**/*.js'"
+    "clean": "prettier --write 'src/app/**/*.js'",
+    "clean:check": "prettier 'src/app/**/*.js'"
   },
   "dependencies": {
     "expo": "^35.0.0",
