@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import reduce from 'lodash/reduce';
+import reduce from "lodash/reduce";
 
-const flatten = (props) => (result, value, key) => {
-  if (typeof value === 'object') {
+const flatten = props => (result, value, key) => {
+  if (typeof value === "object") {
     result[key] = reduce(value, flatten(props), {});
-  } else if (typeof value === 'function') {
+  } else if (typeof value === "function") {
     result[key] = value(props);
   } else {
     result[key] = value;

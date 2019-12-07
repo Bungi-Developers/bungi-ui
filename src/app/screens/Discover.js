@@ -16,7 +16,7 @@ export default compose(
   withStyles({
     container: {
       flex: 1,
-      backgroundColor: "blue",
+      backgroundColor: "blue"
     },
     text: {
       fontSize: 24
