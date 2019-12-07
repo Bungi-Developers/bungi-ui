@@ -2,10 +2,13 @@ import React from "react";
 import { compose } from "redux";
 import { Text, View } from "react-native";
 import { withStyles } from "../HOCs";
+import ContentBox from "../components/ContentBox";
 
 export const Discover = ({ styles }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>Discover</Text>
+    <ContentBox>
+      <Text style={styles.text}>Some Text</Text>
+    </ContentBox>
   </View>
 );
 
@@ -13,9 +16,7 @@ export default compose(
   withStyles({
     container: {
       flex: 1,
-      backgroundColor: "blue",
-      alignItems: "center",
-      justifyContent: "center"
+      backgroundColor: "blue"
     },
     text: {
       fontSize: 24
