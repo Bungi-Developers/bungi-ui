@@ -2,10 +2,13 @@ import React from "react";
 import { compose } from "redux";
 import { Text, View } from "react-native";
 import { withStyles } from "../HOCs";
+import ContentBox from "../components/ContentBox";
 
 export const Discover = ({ styles }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>Discover</Text>
+    <ContentBox>
+      <Text style={styles.text}>Some Text</Text>
+    </ContentBox>
   </View>
 );
 
