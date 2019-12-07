@@ -17,8 +17,6 @@ export default compose(
     container: {
       flex: 1,
       backgroundColor: "blue",
-      alignItems: "center",
-      justifyContent: "center"
     },
     text: {
       fontSize: 24

@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from "redux";
 import { View } from "react-native";
-import { withStyles } from "../HOCs";
+import { withStyles } from "../../HOCs";
 
 const ContentBox = ({
   color,
@@ -17,6 +17,7 @@ export default compose(
   withStyles({
     container: {
       width: '90%',
+      alignSelf: 'center',
       padding: 20,
       borderRadius: 10,
       backgroundColor: props => props.color || 'white'
