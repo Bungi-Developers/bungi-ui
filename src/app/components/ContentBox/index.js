@@ -12,7 +12,9 @@ export default compose(
     container: {
       width: "90%",
       alignSelf: "center",
-      padding: 20,
+      marginLeft: 20,
+      marginRight: 20,
+      marginTop: 8,
       borderRadius: 10,
       backgroundColor: props => props.color || "white"
     }

@@ -1,25 +1,19 @@
 import React from "react";
+import { View } from "react-native";
 import { compose } from "redux";
-import { Text, View } from "react-native";
-import { withStyles } from "../HOCs";
-import ContentBox from "../components/ContentBox";
+import { withSafeScroll, withStyles } from "../HOCs";
+import UserPane from "../components/UserPane";
+import Header from "../components/Header";
 
-export const Discover = ({ styles }) => (
-  <View style={styles.container}>
-    <ContentBox>
-      <Text style={styles.text}>Some Text</Text>
-    </ContentBox>
+export const Discover = () => (
+  <View style={{ flex: 1 }}>
+    <Header />
+    <UserPane
+      name="Annie"
+      rating={7.1}
+      url="http://www.infodirect.co.za/wp-content/uploads/2016/03/hot-girl-making-selfie.png"
+    />
   </View>
 );
 
-export default compose(
-  withStyles({
-    container: {
-      flex: 1,
-      backgroundColor: "blue"
-    },
-    text: {
-      fontSize: 24
-    }
-  })
-)(Discover);
+export default compose(withSafeScroll)(Discover);
