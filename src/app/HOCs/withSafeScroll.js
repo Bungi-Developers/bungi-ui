@@ -12,14 +12,14 @@ export default withSafeScroll = Component => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginTop: headerHeight,
-    },
+      marginTop: headerHeight
+    }
   });
   return props => (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Component {...props}/>
+        <Component {...props} />
       </ScrollView>
     </SafeAreaView>
-  )
+  );
 };

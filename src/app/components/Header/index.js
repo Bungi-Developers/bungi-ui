@@ -18,13 +18,13 @@ export default compose(
       padding: 10,
       marginBottom: 10,
       backgroundColor: props => props.color || "white",
-      flexDirection: 'row',
-      alignItems: 'center',
+      flexDirection: "row",
+      alignItems: "center",
       borderBottomWidth: 1,
-      borderBottomColor: 'black',
+      borderBottomColor: "black",
       borderTopWidth: 1,
-      borderTopColor: 'black',
-      borderStyle: 'solid',
+      borderTopColor: "black",
+      borderStyle: "solid"
     },
     title: {
       fontSize: 20

@@ -16,25 +16,21 @@ const UserPane = ({
   hometown,
   styles
 }) => {
-  return (
-    <ContentBox>
-     // TODO: use SectionList here
-    </ContentBox>
-  )
+  return <ContentBox>// TODO: use SectionList here</ContentBox>;
 };
 
 export default compose(
   withStyles({
     background: {
-      width: '100%',
+      width: "100%",
       height: 400,
       borderRadius: 10,
-      overflow: 'hidden'
+      overflow: "hidden"
     },
     head: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'baseline',
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "baseline",
       marginLeft: 40,
       marginRight: 40
     },

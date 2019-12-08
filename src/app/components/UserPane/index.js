@@ -4,12 +4,7 @@ import { Text, View, ImageBackground } from "react-native";
 import { withStyles } from "../../HOCs";
 import ContentBox from "../ContentBox";
 
-const UserPane = ({
-  url,
-  name,
-  rating,
-  styles
-}) => {
+const UserPane = ({ url, name, rating, styles }) => {
   return (
     <View>
       <View style={styles.head}>
@@ -21,27 +16,27 @@ const UserPane = ({
           source={{
             uri: url
           }}
-          resizeMode='cover'
+          resizeMode="cover"
           style={styles.background}
         />
       </ContentBox>
     </View>
-  )
+  );
 };
 
-  // TODO: load image sizes more dynamically
+// TODO: load image sizes more dynamically
 export default compose(
   withStyles({
     background: {
-      width: '100%',
+      width: "100%",
       height: 400,
       borderRadius: 10,
-      overflow: 'hidden'
+      overflow: "hidden"
     },
     head: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'baseline',
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "baseline",
       marginLeft: 40,
       marginRight: 40
     },

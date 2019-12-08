@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import reduce from "lodash/reduce";
 
@@ -27,12 +27,12 @@ const renderWithProps = (styles, props) => reduce(styles, flatten(props), {});
 const useStyles = (styles, props) => {
   const [s, setStyle] = useState({});
 
-  console.log('styles', styles);
-  console.log('props', props);
+  console.log("styles", styles);
+  console.log("props", props);
 
   useEffect(() => {
     const r = renderWithProps(styles, props);
-    console.log('r', r);
+    console.log("r", r);
 
     const styleSheet = StyleSheet.create(r);
     setStyle(styleSheet);

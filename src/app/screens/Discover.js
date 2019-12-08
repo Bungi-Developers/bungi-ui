@@ -7,15 +7,13 @@ import Header from "../components/Header";
 
 export const Discover = () => (
   <View style={{ flex: 1 }}>
-  <Header />
-  <UserPane
-    name='Annie'
-    rating={7.1}
-    url='http://www.infodirect.co.za/wp-content/uploads/2016/03/hot-girl-making-selfie.png'
-  />
+    <Header />
+    <UserPane
+      name="Annie"
+      rating={7.1}
+      url="http://www.infodirect.co.za/wp-content/uploads/2016/03/hot-girl-making-selfie.png"
+    />
   </View>
 );
 
-export default compose(
-  withSafeScroll,
-)(Discover);
+export default compose(withSafeScroll)(Discover);
