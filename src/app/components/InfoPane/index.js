@@ -1,7 +1,7 @@
 import React from "react";
 import { compose } from "redux";
 import uuid from "lodash/uniqueId";
-import { MaterialIcons, FontAwesome, MaterialCommunityIcons, Ionicons, AntDesign } from '@expo/vector-icons';
+import { MaterialIcons, FontAwesome, MaterialCommunityIcons, Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import { Text, View, FlatList } from "react-native";
 import { withStyles } from "../../HOCs";
 import ContentBox from "../ContentBox";
@@ -64,13 +64,11 @@ const UserPane = ({
             id: uuid(),
             Icon: () => <Entypo size={32} name="ruler" />,
             content: height,
-            last: true,
           },
           {
             id: uuid(),
             Icon: () => <MaterialCommunityIcons size={32} name="map-marker" />,
             content: location,
-            last: true,
           },
           {
             id: uuid(),
@@ -86,13 +84,11 @@ const UserPane = ({
             id: uuid(),
             Icon: () => <MaterialIcons size={32} name="account-balance" />,
             content: ideaology,
-            last: true,
           },
           {
             id: uuid(),
             Icon: () => <AntDesign size={32} name="book" />,
             content: religion,
-            last: true,
           },
           {
             id: uuid(),
