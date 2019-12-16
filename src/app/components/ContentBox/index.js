@@ -17,7 +17,7 @@ export default compose(
       marginTop: 8,
       borderRadius: 10,
       borderWidth: 1,
-      borderColor: 'black',
+      borderColor: "black",
       flex: 1,
       backgroundColor: props => props.color || "white"
     }
