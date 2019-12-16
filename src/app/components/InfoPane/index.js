@@ -6,7 +6,6 @@ import {
   FontAwesome,
   MaterialCommunityIcons,
   Ionicons,
-  AntDesign,
   Entypo
 } from "@expo/vector-icons";
 import { Text, View, FlatList } from "react-native";
@@ -80,7 +79,7 @@ const UserPane = ({
           },
           {
             id: uuid(),
-            Icon: () => <FontAwesome size={32} name="graduation-cap" />,
+            Icon: () => <Entypo size={32} name="graduation-cap" />,
             content: education
           },
           {
@@ -90,12 +89,12 @@ const UserPane = ({
           },
           {
             id: uuid(),
-            Icon: () => <AntDesign size={32} name="book" />,
+            Icon: () => <Entypo size={32} name="book" />,
             content: religion
           },
           {
             id: uuid(),
-            Icon: () => <AntDesign size={32} name="home" />,
+            Icon: () => <Entypo size={32} name="home" />,
             content: hometown,
             last: true
           }

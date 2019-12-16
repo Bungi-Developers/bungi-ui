@@ -8,7 +8,6 @@ import InfoPane from "../components/InfoPane";
 
 export const Discover = () => (
   <View style={{ flex: 1 }}>
-    <Header />
     <UserPane
       name="Annie"
       rating={7.1}
@@ -22,7 +21,7 @@ export const Discover = () => (
       job="Waitress"
       education="Colorado College"
       religion="Agnostic"
-      ideaology="Unknown"
+      ideaology="Democrat"
       hometown="Greely"
     />
   </View>
