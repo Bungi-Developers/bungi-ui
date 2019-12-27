@@ -8,7 +8,7 @@ import {
   Entypo
 } from "@expo/vector-icons";
 import { FlatList } from "react-native";
-import { ContentBox } from "../../components";
+import { ContentBox } from "../../../components";
 import InfoPaneItem from "./InfoPaneItem";
 
 // TODO: offload to backend resolver or selector
