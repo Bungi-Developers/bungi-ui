@@ -11,18 +11,10 @@ import { FlatList } from "react-native";
 import { ContentBox } from "../../../components";
 import InfoPaneItem from "./InfoPaneItem";
 
-// TODO: offload to backend resolver or selector
-const convertInchesToString = heightInches => {
-  const inchesPerFoot = 12;
-  const feet = Math.floor(heightInches / inchesPerFoot);
-  const inches = heightInches % inchesPerFoot;
-  return `${feet}'${inches ? ` ${inches}"` : ""}`;
-};
-
 const InfoPane = ({
   age,
   sex,
-  heightInches,
+  height,
   location,
   job,
   education,
@@ -49,7 +41,7 @@ const InfoPane = ({
         {
           id: uuid(),
           Icon: () => <Entypo size={32} name="ruler" />,
-          content: convertInchesToString(heightInches)
+          content: height
         },
         {
           id: uuid(),
