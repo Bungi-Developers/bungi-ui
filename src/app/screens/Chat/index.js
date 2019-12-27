@@ -1,11 +1,11 @@
 import React from "react";
 import { compose } from "redux";
 import { Text, View } from "react-native";
-import { withStyles } from "../HOCs";
+import { withStyles } from "../../HOCs";
 
-export const User = ({ styles }) => (
+export const Chat = ({ styles }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>User</Text>
+    <Text style={styles.text}>Chat</Text>
   </View>
 );
 
@@ -13,7 +13,7 @@ export default compose(
   withStyles({
     container: {
       flex: 1,
-      backgroundColor: "red",
+      backgroundColor: "green",
       alignItems: "center",
       justifyContent: "center"
     },
@@ -21,4 +21,4 @@ export default compose(
       fontSize: 24
     }
   })
-)(User);
+)(Chat);

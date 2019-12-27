@@ -1,11 +1,11 @@
 import React from "react";
 import { compose } from "redux";
 import { Text, View } from "react-native";
-import { withStyles } from "../HOCs";
+import { withStyles } from "../../HOCs";
 
-export const Chat = ({ styles }) => (
+export const ChatList = ({ styles }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>Chat</Text>
+    <Text style={styles.text}>ChatList</Text>
   </View>
 );
 
@@ -21,4 +21,4 @@ export default compose(
       fontSize: 24
     }
   })
-)(Chat);
+)(ChatList);

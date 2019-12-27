@@ -1,8 +1,14 @@
 import { gql } from "apollo-boost";
+import random from "lodash/random";
+import get from "lodash/get";
+
+// TODO: Remove once we have a current user query based on token.
+const phones = ["555-555-1234", "555-555-5555"];
+const phone = get(phones, random(0, phones.length - 1), phones[0]);
 
 export default gql`
   {
-    users: discover(sex: "Female", location: "Fairfield, CT") {
+    user(phone: ${`"${phone}"`}) {
       id
       name
       rating
