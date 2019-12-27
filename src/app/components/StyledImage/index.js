@@ -1,6 +1,6 @@
 import React from "react";
 import { compose } from "redux";
-import { Text, View, ImageBackground } from "react-native";
+import { ImageBackground } from "react-native";
 import { withStyles } from "../../HOCs";
 import ContentBox from "../ContentBox";
 

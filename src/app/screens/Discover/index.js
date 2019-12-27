@@ -14,8 +14,10 @@ const Discover = () => {
   if (loading) {
     return <Text>Loading</Text>;
   }
-  if (error) {
-    return <Text>{error.message}</Text>;
+  if (error || !data.users) {
+    return (
+      <Text>{(error && error.message) || "An unknown error occurred"}</Text>
+    );
   }
   const randomUser = random(0, data.users.length - 1);
   const user = data.users[randomUser];

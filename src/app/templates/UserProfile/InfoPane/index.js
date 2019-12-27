@@ -19,7 +19,7 @@ const convertInchesToString = heightInches => {
   return `${feet}'${inches ? ` ${inches}"` : ""}`;
 };
 
-const ProfilePane = ({
+const InfoPane = ({
   age,
   sex,
   heightInches,
@@ -87,4 +87,4 @@ const ProfilePane = ({
   </ContentBox>
 );
 
-export default ProfilePane;
+export default InfoPane;
