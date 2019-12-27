@@ -16,7 +16,7 @@ export default compose(
       marginRight: 20,
       marginTop: 12,
       borderRadius: 10,
-      borderColor: props => props.border ? '#000000' : 'transparent',
+      borderColor: props => (props.border ? "#000000" : "transparent"),
       borderWidth: 1,
       flex: 1,
       backgroundColor: props => props.color || "white"

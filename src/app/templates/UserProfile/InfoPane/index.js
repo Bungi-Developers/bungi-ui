@@ -8,18 +8,18 @@ import {
   Entypo
 } from "@expo/vector-icons";
 import { FlatList } from "react-native";
-import ContentBox from "../ContentBox";
-import UserProfileItem from './UserProfileItem';
+import { ContentBox } from "../../components";
+import InfoPaneItem from "./InfoPaneItem";
 
 // TODO: offload to backend resolver or selector
-const convertInchesToString = (heightInches) => {
+const convertInchesToString = heightInches => {
   const inchesPerFoot = 12;
   const feet = Math.floor(heightInches / inchesPerFoot);
   const inches = heightInches % inchesPerFoot;
-  return `${feet}'${inches ? ` ${inches}"` : ''}`;
+  return `${feet}'${inches ? ` ${inches}"` : ""}`;
 };
 
-const UserProfilePane = ({
+const ProfilePane = ({
   age,
   sex,
   heightInches,
@@ -33,7 +33,7 @@ const UserProfilePane = ({
 }) => (
   <ContentBox border={true}>
     <FlatList
-      renderItem={({ item }) => <UserProfileItem {...item} />}
+      renderItem={({ item }) => <InfoPaneItem {...item} />}
       keyExtractor={item => item.id}
       data={[
         {
@@ -87,4 +87,4 @@ const UserProfilePane = ({
   </ContentBox>
 );
 
-export default UserProfilePane;
+export default ProfilePane;

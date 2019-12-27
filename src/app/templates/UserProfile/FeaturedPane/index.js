@@ -1,10 +1,10 @@
 import React from "react";
 import { compose } from "redux";
 import { Text, View, ImageBackground } from "react-native";
-import { withStyles } from "../../HOCs";
-import ContentBox from "../ContentBox";
+import { withStyles } from "../../../HOCs";
+import { ContentBox } from "../../../components";
 
-const UserPane = ({ url, name, rating, styles }) => {
+const FeaturedPane = ({ url, name, rating, styles }) => {
   return (
     <View>
       <View style={styles.head}>
@@ -48,4 +48,4 @@ export default compose(
       fontSize: 16
     }
   })
-)(UserPane);
+)(FeaturedPane);

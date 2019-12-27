@@ -4,14 +4,14 @@ export default gql`
   {
     users {
       id
-      lastName
-      firstName
+      name
       rating
       phone
       profile {
         imageUrls
+        sex
         age
-        heightInches
+        height
         location
         job
         education

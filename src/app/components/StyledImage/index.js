@@ -4,7 +4,7 @@ import { Text, View, ImageBackground } from "react-native";
 import { withStyles } from "../../HOCs";
 import ContentBox from "../ContentBox";
 
-const UserImage = ({ url, styles }) => {
+const StyledImage = ({ url, styles }) => {
   return (
     <ContentBox>
       <ImageBackground
@@ -33,6 +33,6 @@ export default compose(
       alignItems: "baseline",
       marginLeft: 40,
       marginRight: 40
-    },
+    }
   })
-)(UserImage);
+)(StyledImage);
