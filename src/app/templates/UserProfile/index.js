@@ -70,7 +70,8 @@ export default compose(
     },
     buttonContainer: {
       flex: 1,
-      flexDirection: "row"
+      flexDirection: "row",
+      alignItems: "center"
     },
     rightButton: {
       justifyContent: "flex-end"
@@ -79,7 +80,7 @@ export default compose(
       justifyContent: "flex-start"
     },
     rating: {
-      fontSize: 16
+      fontSize: 12
     }
   })
 )(UserProfile);
