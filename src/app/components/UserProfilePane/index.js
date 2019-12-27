@@ -34,6 +34,7 @@ const Item = ({ content, last, Icon }) => (
   </View>
 );
 
+// TODO: offload to backend resolver
 const convertInchesToString = (heightInches) => {
   const inchesPerFoot = 12;
   const feet = Math.floor(heightInches / inchesPerFoot);
