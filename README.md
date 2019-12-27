@@ -35,7 +35,9 @@ Download the Expo client on your mobile device if you want to run the applicatio
 
 ### Running
 1. Run `yarn` to install dependencies
-2. Run `yarn start`
+1. Set your api url: `export BUNGI_API_URL="http://000.000.0.0:1337"`
+  NOTE: this will need to be set to your internal IP address. Checkout [this article](https://lifehacker.com/how-to-find-your-local-and-external-ip-address-5833108) for instructions on how to find it.
+1. Run `yarn start`
 
 A new tab should open in your browser with the Expo client.
 
