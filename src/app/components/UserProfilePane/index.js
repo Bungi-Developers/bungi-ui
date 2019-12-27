@@ -50,7 +50,7 @@ const UserProfilePane = ({
   job,
   education,
   religion,
-  politicalIdeaology,
+  politicalIdeology,
   hometown,
   styles
 }) => (
@@ -93,7 +93,7 @@ const UserProfilePane = ({
           {
             id: uuid(),
             Icon: () => <MaterialIcons size={32} name="account-balance" />,
-            content: politicalIdeaology
+            content: politicalIdeology
           },
           {
             id: uuid(),
