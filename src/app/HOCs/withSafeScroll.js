@@ -1,6 +1,5 @@
 import React from "react";
 import { ScrollView, SafeAreaView, StyleSheet } from "react-native";
-import { headerHeight } from "../constants/app";
 
 /**
  * withSafeScroll wraps a component with the SafeAreaView and
@@ -11,8 +10,7 @@ import { headerHeight } from "../constants/app";
 export default withSafeScroll = Component => {
   const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      marginTop: headerHeight
+      flex: 1
     }
   });
   return props => (
