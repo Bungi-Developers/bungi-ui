@@ -1,4 +1,5 @@
 import React from "react";
+import random from 'lodash/random';
 import { View, Text } from "react-native";
 import { compose } from "redux";
 import { withSafeScroll, withStyles } from "../../HOCs";
@@ -24,7 +25,8 @@ const Discover = () => {
   if (error) {
     return <Text>{error.message}</Text>;
   }
-  const user = data.users[0];
+  const randomUser = random(0, data.users.length -1);
+  const user = data.users[randomUser];
   const [featuredImage, ...imageUrls] = user.profile.imageUrls;
   return (
     <View style={{ flex: 1 }}>
