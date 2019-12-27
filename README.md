@@ -56,4 +56,10 @@ A new tab should open in your browser with the Expo client.
     * Click on `Run on iOS simulator` in the Expo client and it will install the Expo app in your virtual iOS device and launch the app.
     * _NOTE: You can also launch into iOS by pressing `i` in the terminal where the expo client is running or use the start command `yarn start --ios`._
 
-
+## Debugging
+Installing the [react-native debugger](https://github.com/jhen0409/react-native-debugger) will help w/ debugging tremendously.
+1. Follow the installation instructions on the [react-native debugger repo](https://github.com/jhen0409/react-native-debugger).
+1. Open the debugger from your application menu
+1. Set the port to `19001` by pressing Cmd+T in the debugger.
+1. In the developer console within expo on your device, open the developer menu and select "Debug Remote JS".  Your app should now be running in the debugger.
+1. Follow the react-native debugger repo's readme to setup extensions or if you run into issues.
