@@ -34,15 +34,22 @@ const Item = ({ content, last, Icon }) => (
   </View>
 );
 
-const UserPane = ({
+const convertInchesToString = (heightInches) => {
+  const inchesPerFoot = 12;
+  const feet = Math.floor(heightInches / inchesPerFoot);
+  const inches = heightInches % inchesPerFoot;
+  return `${feet}'${inches ? ` ${inches}"` : ''}`;
+};
+
+const UserProfilePane = ({
   age,
   sex,
-  height,
+  heightInches,
   location,
   job,
   education,
   religion,
-  ideaology,
+  politicalIdeaology,
   hometown,
   styles
 }) => (
@@ -65,7 +72,7 @@ const UserPane = ({
           {
             id: uuid(),
             Icon: () => <Entypo size={32} name="ruler" />,
-            content: height
+            content: convertInchesToString(heightInches)
           },
           {
             id: uuid(),
@@ -85,7 +92,7 @@ const UserPane = ({
           {
             id: uuid(),
             Icon: () => <MaterialIcons size={32} name="account-balance" />,
-            content: ideaology
+            content: politicalIdeaology
           },
           {
             id: uuid(),
@@ -113,4 +120,4 @@ export default compose(
       overflow: "hidden"
     }
   })
-)(UserPane);
+)(UserProfilePane);

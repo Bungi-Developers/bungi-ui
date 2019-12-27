@@ -1,7 +1,8 @@
-import ApolloClient from 'apollo-boost';
+import ApolloClient from "apollo-boost";
 
+const uri = `${process.env.BUNGI_API_URL}/api`;
 const client = new ApolloClient({
-  uri: 'http://localhost:1337/api',
+  uri,
 });
 
 export default client;

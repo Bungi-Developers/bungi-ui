@@ -28,7 +28,8 @@
     "redux": "^4.0.4"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.1.0"
+    "babel-preset-expo": "^7.1.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3"
   },
   "private": true
 }
