@@ -35,6 +35,7 @@ export default compose(
     },
     head: {
       flexDirection: "row",
+      marginBottom: 20,
       justifyContent: "space-between",
       alignItems: "baseline",
       marginLeft: 40,

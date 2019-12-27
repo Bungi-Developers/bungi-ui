@@ -14,10 +14,10 @@ export default compose(
       alignSelf: "center",
       marginLeft: 20,
       marginRight: 20,
-      marginTop: 8,
+      marginTop: 12,
       borderRadius: 10,
+      borderColor: props => props.border ? '#000000' : 'transparent',
       borderWidth: 1,
-      borderColor: "black",
       flex: 1,
       backgroundColor: props => props.color || "white"
     }
