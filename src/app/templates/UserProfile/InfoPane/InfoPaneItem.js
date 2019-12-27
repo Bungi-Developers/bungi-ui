@@ -3,7 +3,7 @@ import { compose } from "redux";
 import { Text, View } from "react-native";
 import { withStyles } from "../../../HOCs";
 
-const Item = ({ content, last, Icon, styles }) => (
+const InfoPaneItem = ({ content, last, Icon, styles }) => (
   <View style={styles.container}>
     <View style={styles.iconContainer}>
       <Icon />
@@ -29,4 +29,4 @@ export default compose(
     iconContainer: { marginRight: 12 },
     text: { fontSize: 24 }
   })
-)(Item);
+)(InfoPaneItem);

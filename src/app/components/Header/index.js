@@ -1,13 +1,11 @@
 import React from "react";
 import { compose } from "redux";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { headerHeight } from "../../constants/app";
 import { withStyles } from "../../HOCs";
 
-const Header = ({ color, styles }) => (
-  <View style={styles.container}>
-    <Text style={styles.title}>Bungee</Text>
-  </View>
+const Header = ({ styles, children }) => (
+  <View style={styles.container}>{children}</View>
 );
 
 export default compose(
@@ -21,13 +19,8 @@ export default compose(
       flexDirection: "row",
       alignItems: "center",
       borderBottomWidth: 1,
-      borderBottomColor: "black",
-      borderTopWidth: 1,
-      borderTopColor: "black",
+      borderBottomColor: "gray",
       borderStyle: "solid"
-    },
-    title: {
-      fontSize: 20
     }
   })
 )(Header);

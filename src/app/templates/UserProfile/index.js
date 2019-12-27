@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { View, Button } from "react-native";
+import { View, Button, Text } from "react-native";
 import { compose } from "redux";
 import { withSafeScroll, withStyles } from "../../HOCs";
-import { StyledImage, ContentBox } from "../../components";
-import FeaturedPane from "./FeaturedPane";
+import { StyledImage, Header } from "../../components";
 import InfoPane from "./InfoPane";
 
 const UserProfile = ({
@@ -16,22 +15,28 @@ const UserProfile = ({
   const toggleEditing = () => setEditing(!editing);
   return (
     <View style={styles.container}>
-      {editable && (
-        <ContentBox>
-          <View
-            style={{ ...styles.toolbar, ...(editing ? styles.editing : {}) }}
-          >
-            {editing && (
-              <>
-                <Button title="Cancel" onPress={toggleEditing} />
-                <Button title="Save" onPress={toggleEditing} />
-              </>
-            )}
-            {!editing && <Button title="Edit" onPress={toggleEditing} />}
+      <Header>
+        <View style={styles.toolbar}>
+          {editable && (
+            <View style={{ ...styles.buttonContainer, ...styles.leftButton }}>
+              {editing && <Button title="Cancel" onPress={toggleEditing} />}
+            </View>
+          )}
+          <View style={styles.headerContent}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.rating}>{rating}</Text>
           </View>
-        </ContentBox>
-      )}
-      <FeaturedPane name={name} rating={rating} url={featuredImage} />
+          {editable && (
+            <View style={{ ...styles.buttonContainer, ...styles.rightButton }}>
+              <Button
+                title={editing ? "Save" : "Edit"}
+                onPress={toggleEditing}
+              />
+            </View>
+          )}
+        </View>
+      </Header>
+      <StyledImage url={featuredImage} />
       <InfoPane {...profile} />
       {imageUrls.map((url, i) => (
         <StyledImage key={i} url={url} />
@@ -52,10 +57,29 @@ export default compose(
       display: "flex",
       flexDirection: "row",
       marginRight: 12,
+      justifyContent: "center"
+    },
+    headerContent: {
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "row"
+    },
+    name: {
+      fontSize: 22,
+      marginRight: 6
+    },
+    buttonContainer: {
+      flex: 1,
+      flexDirection: "row"
+    },
+    rightButton: {
       justifyContent: "flex-end"
     },
-    editing: {
-      justifyContent: "space-between"
+    leftButton: {
+      justifyContent: "flex-start"
+    },
+    rating: {
+      fontSize: 16
     }
   })
 )(UserProfile);
