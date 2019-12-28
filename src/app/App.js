@@ -7,7 +7,8 @@ import client from "./apolloClient";
 const App = () => {
   useEffect(() => {
     Font.loadAsync({
-      "avenir-next": require("../../assets/fonts/AvenirNextLTPro-Regular.otf")
+      "avenir-next": require("../../assets/fonts/AvenirNextLTPro-Regular.otf"),
+      "avenir-next-bold": require("../../assets/fonts/AvenirNextLTPro-Bold.otf")
     });
   });
   return (
