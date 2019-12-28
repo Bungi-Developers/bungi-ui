@@ -1,20 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as Font from "expo-font";
 import { ApolloProvider } from "@apollo/react-hooks";
 import Router from "./navigation/Router";
 import client from "./apolloClient";
 
 const App = () => {
+  const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    Font.loadAsync({
-      "avenir-next": require("../../assets/fonts/AvenirNextLTPro-Regular.otf"),
-      "avenir-next-bold": require("../../assets/fonts/AvenirNextLTPro-Bold.otf")
-    });
-  });
+    if (!loaded) {
+      Font.loadAsync({
+        "avenir-next": require("../../assets/fonts/AvenirNextLTPro-Regular.otf"),
+        "avenir-next-bold": require("../../assets/fonts/AvenirNextLTPro-Bold.otf")
+      }).then(() => setLoaded(true));
+    }
+  }, [loaded, setLoaded]);
   return (
-    <ApolloProvider client={client}>
-      <Router />
-    </ApolloProvider>
+    loaded && (
+      <ApolloProvider client={client}>
+        <Router />
+      </ApolloProvider>
+    )
   );
 };
 

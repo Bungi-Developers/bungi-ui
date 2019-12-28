@@ -66,6 +66,7 @@ export default compose(
     },
     name: {
       fontSize: 22,
+      fontFamily: "avenir-next-bold",
       marginRight: 6
     },
     buttonContainer: {
@@ -80,7 +81,8 @@ export default compose(
       justifyContent: "flex-start"
     },
     rating: {
-      fontSize: 12
+      fontSize: 12,
+      fontFamily: "avenir-next"
     }
   })
 )(UserProfile);

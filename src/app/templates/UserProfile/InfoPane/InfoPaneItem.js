@@ -27,6 +27,10 @@ export default compose(
       borderBottomWidth: props => (props.last ? 0 : 1)
     },
     iconContainer: { marginRight: 12 },
-    text: { fontSize: 24 }
+    text: {
+      fontSize: 18,
+      fontFamily: "avenir-next",
+      justifyContent: "center"
+    }
   })
 )(InfoPaneItem);
