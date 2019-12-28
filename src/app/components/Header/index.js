@@ -13,6 +13,7 @@ export default compose(
     container: {
       width: "100%",
       height: headerHeight,
+      fontFamily: "avenir-next",
       padding: 10,
       marginBottom: 10,
       backgroundColor: props => props.color || "white",
