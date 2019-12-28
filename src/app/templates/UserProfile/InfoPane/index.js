@@ -20,8 +20,7 @@ const InfoPane = ({
   education,
   religion,
   politicalIdeology,
-  hometown,
-  styles
+  hometown
 }) => (
   <ContentBox border={true}>
     <FlatList
@@ -30,47 +29,49 @@ const InfoPane = ({
       data={[
         {
           id: uuid(),
-          Icon: () => <MaterialIcons size={32} name="cake" />,
+          Icon: props => <MaterialIcons name="cake" {...props} />,
           content: age
         },
         {
           id: uuid(),
-          Icon: () => <FontAwesome size={32} name="intersex" />,
+          Icon: props => <FontAwesome name="intersex" {...props} />,
           content: sex
         },
         {
           id: uuid(),
-          Icon: () => <Entypo size={32} name="ruler" />,
+          Icon: props => <Entypo name="ruler" {...props} />,
           content: height
         },
         {
           id: uuid(),
-          Icon: () => <MaterialCommunityIcons size={32} name="map-marker" />,
+          Icon: props => (
+            <MaterialCommunityIcons name="map-marker" {...props} />
+          ),
           content: location
         },
         {
           id: uuid(),
-          Icon: () => <Ionicons size={32} name="ios-briefcase" />,
+          Icon: props => <Ionicons name="ios-briefcase" {...props} />,
           content: job
         },
         {
           id: uuid(),
-          Icon: () => <Entypo size={32} name="graduation-cap" />,
+          Icon: props => <Entypo name="graduation-cap" {...props} />,
           content: education
         },
         {
           id: uuid(),
-          Icon: () => <MaterialIcons size={32} name="account-balance" />,
+          Icon: props => <MaterialIcons name="account-balance" {...props} />,
           content: politicalIdeology
         },
         {
           id: uuid(),
-          Icon: () => <Entypo size={32} name="book" />,
+          Icon: props => <Entypo name="book" {...props} />,
           content: religion
         },
         {
           id: uuid(),
-          Icon: () => <Entypo size={32} name="home" />,
+          Icon: props => <Entypo name="home" {...props} />,
           content: hometown,
           last: true
         }
