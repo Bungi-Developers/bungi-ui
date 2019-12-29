@@ -14,7 +14,6 @@ export default compose(
       width: "100%",
       height: headerHeight,
       padding: 10,
-      marginBottom: 10,
       backgroundColor: props => props.color || "white",
       flexDirection: "row",
       alignItems: "center",

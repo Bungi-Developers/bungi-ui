@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Button, Text } from "react-native";
+import { View, Button, Text, SafeAreaView } from "react-native";
 import { compose } from "redux";
 import { withStyles } from "../../HOCs";
 import { Header } from "../../components";
@@ -13,7 +13,7 @@ const UserProfile = ({
   const [editing, setEditing] = useState(false);
   const toggleEditing = () => setEditing(!editing);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header>
         <View style={styles.toolbar}>
           {editable && (
@@ -36,7 +36,7 @@ const UserProfile = ({
         </View>
       </Header>
       <UserProfileContent profile={profile} />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -47,7 +47,7 @@ export default compose(
     },
     toolbar: {
       width: "100%",
-      height: 45,
+
       display: "flex",
       flexDirection: "row",
       marginRight: 12,

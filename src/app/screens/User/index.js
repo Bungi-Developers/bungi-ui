@@ -1,8 +1,6 @@
 import React from "react";
-import { Text } from "react-native";
-import { compose } from "redux";
+import { Text, View } from "react-native";
 import { useQuery } from "@apollo/react-hooks";
-import { withSafeScroll } from "../../HOCs";
 import USER_QUERY from "./query";
 import UserProfile from "../../templates/UserProfile";
 
@@ -21,4 +19,4 @@ const User = () => {
   return <UserProfile editable={true} user={data.user} />;
 };
 
-export default compose(withSafeScroll)(User);
+export default User;
