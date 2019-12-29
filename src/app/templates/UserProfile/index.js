@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { View, Button, Text } from "react-native";
 import { compose } from "redux";
-import { withSafeScroll, withStyles } from "../../HOCs";
-import { StyledImage, Header } from "../../components";
-import InfoPane from "./InfoPane";
+import { withStyles } from "../../HOCs";
+import { Header } from "../../components";
+import UserProfileContent from "./Content";
 
-const UserProfile = ({
-  user: { name, rating, profile },
-  editable = false,
-  styles
-}) => {
-  const [featuredImage, ...imageUrls] = profile.imageUrls;
+const UserProfile = ({ user: { name, rating }, editable = false, styles }) => {
   const [editing, setEditing] = useState(false);
   const toggleEditing = () => setEditing(!editing);
   return (
@@ -36,17 +31,12 @@ const UserProfile = ({
           )}
         </View>
       </Header>
-      <StyledImage url={featuredImage} />
-      <InfoPane {...profile} />
-      {imageUrls.map((url, i) => (
-        <StyledImage key={i} url={url} />
-      ))}
+      <UserProfileContent profile={profile} />
     </View>
   );
 };
 
 export default compose(
-  withSafeScroll,
   withStyles({
     container: {
       flex: 1
