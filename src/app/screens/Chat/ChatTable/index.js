@@ -1,12 +1,20 @@
 import React from "react";
 import uuid from "lodash/uniqueId";
 import { compose } from "redux";
-import { View, FlatList } from "react-native";
+import { View, FlatList, Text } from "react-native";
 import { withStyles } from "../../../HOCs";
 import ChatTableItem from "./ChatTableItem";
 
 export const ChatTable = ({ styles }) => (
   <View style={styles.container}>
+    <View style={styles.newChatsContainer}>
+      <View style={styles.newChatCircle}>
+        <Text style={styles.newChatsText}>2</Text>
+      </View>
+      <View>
+        <Text>You have 2 new messages!</Text>
+      </View>
+    </View>
     <FlatList
       renderItem={({ item }) => <ChatTableItem {...item} />}
       keyExtractor={item => item.id}
@@ -33,13 +41,33 @@ export const ChatTable = ({ styles }) => (
 export default compose(
   withStyles({
     container: {
-      flex: 1,
-      backgroundColor: "green",
-      alignItems: "center",
-      justifyContent: "center"
+      flex: 1
     },
     text: {
       fontSize: 24
+    },
+    newChatsContainer: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      borderBottomColor: "black",
+      borderBottomWidth: 1,
+      padding: 12
+    },
+    newChatsText: {
+      fontFamily: "avenir-next-bold",
+      height: 28,
+      fontSize: 28
+    },
+    newChatCircle: {
+      borderRadius: 50,
+      borderWidth: 1,
+      borderColor: "black",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: 64,
+      width: 64
     }
   })
 )(ChatTable);
