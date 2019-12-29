@@ -1,19 +1,27 @@
 import React from "react";
 import { View, Button, TouchableHighlight } from "react-native";
 import { compose } from "redux";
+import { useMutation } from "@apollo/react-hooks";
 import { AntDesign } from "@expo/vector-icons";
+import CREATE_CHAT_MUTATION from "./mutation";
 import { withStyles } from "../../HOCs";
 
-const ButtonBar = ({ styles }) => (
-  <View style={styles.buttonContainer}>
-    <TouchableHighlight onPress={() => {}} style={styles.button}>
-      <AntDesign style={styles.icon} name="close" size={32} />
-    </TouchableHighlight>
-    <TouchableHighlight onPress={() => {}} style={styles.button}>
-      <AntDesign style={styles.icon} name="camerao" size={32} />
-    </TouchableHighlight>
-  </View>
-);
+const ButtonBar = ({ styles, user }) => {
+  const [createChat, { data }] = useMutation(CREATE_CHAT_MUTATION);
+  return (
+    <View style={styles.buttonContainer}>
+      <TouchableHighlight onPress={() => {}} style={styles.button}>
+        <AntDesign style={styles.icon} name="close" size={32} />
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => createChat({ variables: { recipient: user.id } })}
+        style={styles.button}
+      >
+        <AntDesign style={styles.icon} name="camerao" size={32} />
+      </TouchableHighlight>
+    </View>
+  );
+};
 
 export default compose(
   withStyles({

@@ -25,7 +25,7 @@ const Discover = ({ styles }) => {
   return (
     <View style={styles.container}>
       <UserProfile user={user} />
-      <ButtonBar />
+      <ButtonBar user={user} />
     </View>
   );
 };

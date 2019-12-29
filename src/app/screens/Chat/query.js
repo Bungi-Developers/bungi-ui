@@ -4,9 +4,8 @@ import { currentUserPhone } from "../../constants/user";
 export default gql`
   {
     currentChats(phone: ${`"${currentUserPhone}"`}) {
-      user {
-        imageUrls
-        name
+      messages {
+        url
       }
     }
   }
