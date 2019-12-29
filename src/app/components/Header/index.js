@@ -18,6 +18,7 @@ export default compose(
       backgroundColor: props => props.color || "white",
       flexDirection: "row",
       alignItems: "center",
+      justifyContent: "center",
       borderBottomWidth: 1,
       borderBottomColor: "gray",
       borderStyle: "solid"

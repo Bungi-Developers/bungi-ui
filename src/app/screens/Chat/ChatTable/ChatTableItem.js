@@ -37,7 +37,7 @@ export default compose(
     },
     name: {
       fontFamily: "avenir-next",
-      fontSize: 18,
+      fontSize: 22,
       flex: 2
     },
     time: {
