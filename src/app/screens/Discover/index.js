@@ -1,6 +1,5 @@
 import React from "react";
-import random from "lodash/random";
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
 import { compose } from "redux";
 import { useQuery } from "@apollo/react-hooks";
 import { withStyles } from "../../HOCs";
@@ -23,6 +22,7 @@ const Discover = ({ styles }) => {
     return (
       <View style={styles.centerContainer}>
         <Text>{(error && error.message) || "An unknown error occurred"}</Text>
+        <Button title="Refresh" onPress={() => refetch()} />
       </View>
     );
   }
@@ -30,6 +30,7 @@ const Discover = ({ styles }) => {
     return (
       <View style={styles.centerContainer}>
         <Text>No Users Found</Text>
+        <Button title="Refresh" onPress={() => refetch()} />
       </View>
     );
   }
