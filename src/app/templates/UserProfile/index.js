@@ -47,7 +47,6 @@ export default compose(
     },
     toolbar: {
       width: "100%",
-
       display: "flex",
       flexDirection: "row",
       marginRight: 12,
