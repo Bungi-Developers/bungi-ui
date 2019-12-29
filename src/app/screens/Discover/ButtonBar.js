@@ -3,14 +3,18 @@ import { View, Button, TouchableHighlight } from "react-native";
 import { compose } from "redux";
 import { useMutation } from "@apollo/react-hooks";
 import { AntDesign } from "@expo/vector-icons";
-import CREATE_CHAT_MUTATION from "./mutation";
+import CREATE_CHAT_MUTATION, { PASS_USER_MUTATION } from "./mutation";
 import { withStyles } from "../../HOCs";
 
-const ButtonBar = ({ styles, user }) => {
-  const [createChat, { data }] = useMutation(CREATE_CHAT_MUTATION);
+const ButtonBar = ({ styles, user, refetch }) => {
+  const [createChat] = useMutation(CREATE_CHAT_MUTATION);
+  const [passUser] = useMutation(PASS_USER_MUTATION);
   return (
     <View style={styles.buttonContainer}>
-      <TouchableHighlight onPress={() => {}} style={styles.button}>
+      <TouchableHighlight
+        onPress={() => passUser({ variables: { user: user.id } }).then(refetch)}
+        style={styles.button}
+      >
         <AntDesign style={styles.icon} name="close" size={32} />
       </TouchableHighlight>
       <TouchableHighlight

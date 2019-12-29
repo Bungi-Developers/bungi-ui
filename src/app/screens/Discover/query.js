@@ -1,10 +1,10 @@
 import { gql } from "apollo-boost";
 
-import { currentUserHomeTown } from "../../constants/user";
+import { currentUserHomeTown, currentUserPhone } from "../../constants/user";
 
 export default gql`
   {
-    users: discover(sex: "Female", location: ${`"${currentUserHomeTown}"`}) {
+    users: discover(sex: "Female", location: ${`"${currentUserHomeTown}"`}, phone: ${`"${currentUserPhone}"`}) {
       id
       name
       rating
