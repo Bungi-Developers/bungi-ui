@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from "lodash/uniqueId";
 import { compose } from "redux";
-import { View } from "react-native";
+import { View, FlatList } from "react-native";
 import { withStyles } from "../../../HOCs";
 import ChatTableItem from "./ChatTableItem";
 
