@@ -5,7 +5,11 @@ import { withStyles } from "../../HOCs";
 import { Header } from "../../components";
 import UserProfileContent from "./Content";
 
-const UserProfile = ({ user: { name, rating }, editable = false, styles }) => {
+const UserProfile = ({
+  user: { name, rating, profile },
+  editable = false,
+  styles
+}) => {
   const [editing, setEditing] = useState(false);
   const toggleEditing = () => setEditing(!editing);
   return (
