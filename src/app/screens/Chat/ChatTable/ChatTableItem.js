@@ -1,7 +1,7 @@
 import React from "react";
 import { compose } from "redux";
 import { Text, View, ImageBackground } from "react-native";
-import { withStyles } from "../../HOCs";
+import { withStyles } from "../../../HOCs";
 
 const ChatTableItem = ({ styles, name, image, lastSent }) => (
   <View style={styles.container}>

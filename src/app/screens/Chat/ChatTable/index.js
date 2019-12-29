@@ -1,11 +1,11 @@
 import React from "react";
 import uuid from "lodash/uniqueId";
 import { compose } from "redux";
-import { Text, View } from "react-native";
-import { withStyles } from "../../HOCs";
+import { View } from "react-native";
+import { withStyles } from "../../../HOCs";
 import ChatTableItem from "./ChatTableItem";
 
-export const ChatList = ({ styles }) => (
+export const ChatTable = ({ styles }) => (
   <View style={styles.container}>
     <FlatList
       renderItem={({ item }) => <ChatTableItem {...item} />}
@@ -42,4 +42,4 @@ export default compose(
       fontSize: 24
     }
   })
-)(ChatList);
+)(ChatTable);
