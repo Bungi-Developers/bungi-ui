@@ -11,9 +11,7 @@ export const ChatTable = ({ styles }) => (
       <View style={styles.newChatCircle}>
         <Text style={styles.newChatsText}>2</Text>
       </View>
-      <View>
-        <Text>You have 2 new messages!</Text>
-      </View>
+      <Text style={styles.text}>You have 2 new messages!</Text>
     </View>
     <FlatList
       renderItem={({ item }) => <ChatTableItem {...item} />}
@@ -44,7 +42,10 @@ export default compose(
       flex: 1
     },
     text: {
-      fontSize: 24
+      fontSize: 18,
+      fontFamily: "avenir-next",
+      marginLeft: 24,
+      marginRight: 24
     },
     newChatsContainer: {
       flexDirection: "row",
@@ -52,11 +53,11 @@ export default compose(
       alignItems: "center",
       borderBottomColor: "black",
       borderBottomWidth: 1,
-      padding: 12
+      padding: 24
     },
     newChatsText: {
       fontFamily: "avenir-next-bold",
-      height: 28,
+      height: 24,
       fontSize: 28
     },
     newChatCircle: {
@@ -66,8 +67,8 @@ export default compose(
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      height: 64,
-      width: 64
+      height: 86,
+      width: 86
     }
   })
 )(ChatTable);
