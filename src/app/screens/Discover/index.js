@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, Button } from "react-native";
 import { compose } from "redux";
 import { useQuery } from "@apollo/react-hooks";
@@ -8,13 +8,21 @@ import UserProfile from "../../templates/UserProfile";
 import ButtonBar from "./ButtonBar";
 
 const Discover = ({ styles }) => {
+  const [fetched, setFetched] = useState(true);
   const { loading, error, data, refetch } = useQuery(USERS_QUERY);
 
+  const refetchWithTimeout = () => {
+    setFetched(false);
+    return setTimeout(async () => {
+      await refetch();
+      setFetched(true);
+    }, 1000);
+  };
   // TODO: add loading and error components
-  if (loading) {
+  if (loading || !fetched) {
     return (
       <View style={styles.centerContainer}>
-        <Text>Loading</Text>
+        <Text>Loading...</Text>
       </View>
     );
   }
@@ -38,7 +46,7 @@ const Discover = ({ styles }) => {
   return (
     <View style={styles.container}>
       <UserProfile user={user} />
-      <ButtonBar refetch={refetch} user={user} />
+      <ButtonBar refetch={refetchWithTimeout} user={user} />
     </View>
   );
 };

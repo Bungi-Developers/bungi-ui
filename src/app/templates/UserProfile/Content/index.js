@@ -11,7 +11,7 @@ const UserProfileContent = ({ profile }) => {
     ref.current.scrollTo({
       x: 0,
       y: 0,
-      animated: true
+      animated: false
     });
   }, [profile]);
   return (
