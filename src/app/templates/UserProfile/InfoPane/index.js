@@ -24,6 +24,7 @@ const InfoPane = ({
 }) => (
   <ContentBox border={true}>
     <FlatList
+      scrollEnabled={false}
       renderItem={({ item }) => <InfoPaneItem {...item} />}
       keyExtractor={item => item.id}
       data={[
