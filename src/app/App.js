@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import * as Font from "expo-font";
 import { ApolloProvider } from "@apollo/react-hooks";
+import { Provider } from 'react-redux';
 import Router from "./navigation/Router";
 import client from "./apolloClient";
+import initStore from './store';
+
+const store = initStore();
 
 const App = () => {
   const [loaded, setLoaded] = useState(false);
@@ -16,9 +20,11 @@ const App = () => {
   }, [loaded, setLoaded]);
   return (
     loaded && (
-      <ApolloProvider client={client}>
-        <Router />
-      </ApolloProvider>
+      <Provider store={store}>
+        <ApolloProvider client={client}>
+          <Router />
+        </ApolloProvider>
+      </Provider>
     )
   );
 };
