@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Text, View, Button } from "react-native";
 import { compose } from "redux";
 import { useQuery } from "@apollo/react-hooks";
-import { withConnect, withStyles } from "../../HOCs";
+import {  withStyles } from "../../HOCs";
 import USERS_QUERY from "./query";
 import UserProfile from "../../templates/UserProfile";
 import ButtonBar from "./ButtonBar";
-import { loadData as loadDataAction } from "../../action-creators/app";
 
-const Discover = ({ styles, loadData }) => {
+const Discover = ({ styles }) => {
   const [fetched, setFetched] = useState(true);
   const { loading, error, data, refetch } = useQuery(USERS_QUERY);
 
@@ -43,7 +42,6 @@ const Discover = ({ styles, loadData }) => {
       </View>
     );
   }
-  loadData({ some: 'stuff' });
   const user = data.users[0];
   return (
     <View style={styles.container}>
@@ -51,11 +49,6 @@ const Discover = ({ styles, loadData }) => {
       <ButtonBar refetch={refetchWithTimeout} user={user} />
     </View>
   );
-};
-
-const propMap ={};
-const actionMap = {
-  loadData: loadDataAction,
 };
 
 export default compose(
@@ -70,5 +63,4 @@ export default compose(
       justifyContent: "center"
     }
   }),
-  withConnect(propMap, actionMap),
 )(Discover);
