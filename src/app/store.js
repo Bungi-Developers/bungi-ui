@@ -1,13 +1,10 @@
-import {createStore, compose} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import reducers from './reducers';
+import React from "react";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const enhancerList = [];
-const devToolsExtension = window && window.__REDUX_DEVTOOLS_EXTENSION__;
-
-if (typeof devToolsExtension === 'function') {
-  enhancerList.push(devToolsExtension());
-}
-
-const composedEnhancer = compose(...enhancerList);
-
-export default () => createStore(reducers, {}, composedEnhancer);
+export default () => createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk))
+);
