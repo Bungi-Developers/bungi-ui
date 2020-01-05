@@ -1,6 +1,6 @@
-import { LOAD_DATA } from "../action-types/app";
+import { SET_EDITING } from "../action-types/app";
 
-export const loadData = data => ({
-  type: LOAD_DATA,
-  data
+export const setEditing = editing => ({
+  type: SET_EDITING,
+  editing
 });

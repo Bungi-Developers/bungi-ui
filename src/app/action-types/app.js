@@ -1,1 +1,1 @@
-export const LOAD_DATA = "LOAD_DATA";
+export const SET_EDITING = "SET_EDITING";

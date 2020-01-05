@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Button, Text, SafeAreaView } from "react-native";
 import { compose } from "redux";
-import { withStyles } from "../../HOCs";
+import { withConnect, withStyles } from "../../HOCs";
 import { Header } from "../../components";
 import UserProfileContent from "./Content";
+import { selectEditing } from "../../selectors/app";
+import { setEditing as setEditingAction } from "../../action-creators/app";
 
 const UserProfile = ({
   user: { name, rating, profile },
-  editable = false,
+  editable,
+  editing,
+  setEditing,
   styles
 }) => {
-  const [editing, setEditing] = useState(false);
   const toggleEditing = () => setEditing(!editing);
   return (
     <SafeAreaView style={styles.container}>
@@ -38,6 +41,14 @@ const UserProfile = ({
       <UserProfileContent profile={profile} />
     </SafeAreaView>
   );
+};
+
+const propMap = {
+  editing: selectEditing
+};
+
+const actionMap = {
+  setEditing: setEditingAction,
 };
 
 export default compose(
@@ -77,5 +88,6 @@ export default compose(
       fontSize: 12,
       fontFamily: "avenir-next"
     }
-  })
+  }),
+  withConnect(propMap, actionMap),
 )(UserProfile);

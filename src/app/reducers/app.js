@@ -1,13 +1,13 @@
 import { reduceState } from "./utils";
-import { LOAD_DATA } from "../action-types/app";
+import { SET_EDITING } from "../action-types/app";
 
 const initialState = {
-  data: {}
+  editing: false,
 };
 
 const handlers = {
-  [LOAD_DATA]: (state, action) => ({
-    data: action.data,
+  [SET_EDITING]: (state, action) => ({
+    editing: action.editing,
   }),
 
 };

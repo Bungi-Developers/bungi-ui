@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { useQuery } from "@apollo/react-hooks";
 import USER_QUERY from "./query";
 import UserProfile from "../../templates/UserProfile";
@@ -19,4 +19,4 @@ const User = () => {
   return <UserProfile editable={true} user={data.user} />;
 };
 
-export default User;
+export default User

@@ -1,0 +1,1 @@
+export const selectEditing = state => state.app.editing;
