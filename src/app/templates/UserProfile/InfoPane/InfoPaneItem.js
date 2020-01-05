@@ -1,14 +1,21 @@
 import React from "react";
 import { compose } from "redux";
 import { Text, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+
 import { withStyles } from "../../../HOCs";
 
-const InfoPaneItem = ({ content, Icon, styles }) => (
+const InfoPaneItem = ({ content, Icon, styles, editing }) => (
   <View style={styles.container}>
-    <View style={styles.iconContainer}>
-      <Icon size={32} />
+    <View style={styles.leftItems}>
+      <View style={styles.iconContainer}>
+        <Icon size={32} />
+      </View>
+      <Text style={styles.text}>{content}</Text>
+      </View>
+    <View>
+      { editing && <MaterialIcons name="edit" size={28} style={styles.edit} /> }
     </View>
-    <Text style={styles.text}>{content}</Text>
   </View>
 );
 
@@ -18,10 +25,9 @@ export default compose(
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
-      borderBottomWidth: 10,
+      justifyContent: 'space-between',
       paddingVertical: 12,
       paddingHorizontal: 12,
-      justifyContent: "flex-start",
       flex: 1,
       borderBottomColor: "black",
       borderBottomWidth: props => (props.last ? 0 : 1)
@@ -31,6 +37,15 @@ export default compose(
       fontSize: 18,
       height: 18,
       fontFamily: "avenir-next"
+    },
+    leftItems: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    },
+    edit: {
+      opacity: 0.2
     }
   })
 )(InfoPaneItem);

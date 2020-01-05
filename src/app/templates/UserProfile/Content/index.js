@@ -3,7 +3,7 @@ import { View, ScrollView } from "react-native";
 import { StyledImage } from "../../../components";
 import InfoPane from "../InfoPane";
 
-const UserProfileContent = ({ profile }) => {
+const UserProfileContent = ({ profile, editing }) => {
   const [featuredImage, ...imageUrls] = profile.imageUrls;
   const ref = useRef(null);
 
@@ -18,7 +18,7 @@ const UserProfileContent = ({ profile }) => {
     <ScrollView ref={ref}>
       <View>
         <StyledImage url={featuredImage} />
-        <InfoPane {...profile} />
+        <InfoPane editing={editing} {...profile} />
         {imageUrls.map((url, i) => (
           <StyledImage key={i} url={url} />
         ))}

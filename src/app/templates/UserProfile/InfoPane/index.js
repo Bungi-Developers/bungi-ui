@@ -20,12 +20,13 @@ const InfoPane = ({
   education,
   religion,
   politicalIdeology,
-  hometown
+  hometown,
+  editing,
 }) => (
   <ContentBox border={true}>
     <FlatList
       scrollEnabled={false}
-      renderItem={({ item }) => <InfoPaneItem {...item} />}
+      renderItem={({ item }) => <InfoPaneItem editing={editing} {...item} />}
       keyExtractor={item => item.id}
       data={[
         {

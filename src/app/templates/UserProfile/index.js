@@ -38,7 +38,7 @@ const UserProfile = ({
           )}
         </View>
       </Header>
-      <UserProfileContent profile={profile} />
+      <UserProfileContent editing={editing} profile={profile} />
     </SafeAreaView>
   );
 };
