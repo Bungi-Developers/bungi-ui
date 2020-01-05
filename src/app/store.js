@@ -1,4 +1,4 @@
-import {createStore} from 'redux';
+import {createStore, compose} from 'redux';
 import reducers from './reducers';
 
 const enhancerList = [];
@@ -8,4 +8,6 @@ if (typeof devToolsExtension === 'function') {
   enhancerList.push(devToolsExtension());
 }
 
-export default () => createStore(reducers, {}, enhancerList);
+const composedEnhancer = compose(...enhancerList);
+
+export default () => createStore(reducers, {}, composedEnhancer);
