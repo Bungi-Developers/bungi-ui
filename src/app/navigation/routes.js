@@ -4,7 +4,10 @@ import {
   MaterialCommunityIcons,
   Entypo
 } from "@expo/vector-icons";
+import { createStackNavigator } from 'react-navigation-stack';
 import { Discover, Chat, User } from "../screens";
+
+import { EditProfileItem } from "../templates";
 
 export const routeConfig = {
   Discover: {
@@ -28,12 +31,15 @@ export const routeConfig = {
     }
   },
   User: {
-    screen: User,
+    screen: createStackNavigator({
+      user: { screen: User },
+      edit: { screen: EditProfileItem }
+    }, { headerMode: 'none' }),
     navigationOptions: {
       tabBarIcon: ({ focused }) => (
         <FontAwesome color={focused ? "blue" : "black"} size={20} name="user" />
       )
-    }
+    },
   }
 };
 

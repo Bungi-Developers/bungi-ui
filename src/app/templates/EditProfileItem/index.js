@@ -4,17 +4,21 @@ import { compose } from "redux";
 import { withConnect, withSafeScroll, withStyles } from "../../HOCs";
 import { Header } from "../../components";
 import { MaterialIcons } from "@expo/vector-icons";
+import { selectNavigation } from "../../selectors/app";
 
 const EditProfileItem = ({
   title,
+  styles,
+  onPress,
+  navigation,
 }) => {
   return (
     <View>
       <Header>
         <View style={styles.toolbar}>
           <View style={styles.icon}>
-            <TouchableHighlight onPress={() => {}}>
-              <MaterialIcons name='arrow_back_ios' size={28} />
+            <TouchableHighlight onPress={() => navigation.navigate('user')}>
+              <MaterialIcons name="keyboard-arrow-left" size={28} />
             </TouchableHighlight>
           </View>
           <View style={styles.title}>
@@ -26,8 +30,13 @@ const EditProfileItem = ({
   );
 };
 
+const propMap = {
+  navigation: selectNavigation,
+};
+
 export default compose(
   withSafeScroll,
+  withConnect(propMap, {}),
   withStyles({
     toolbar: {
       width: "100%",
@@ -47,5 +56,4 @@ export default compose(
       alignItems: 'center',
     }
   }),
-  withConnect(propMap, actionMap),
 )(EditProfileItem);

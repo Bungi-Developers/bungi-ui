@@ -1,11 +1,12 @@
 import React from "react";
 import { compose } from "redux";
-import { Text, View } from "react-native";
+import { Text, TouchableHighlight, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import { withStyles } from "../../../HOCs";
+import { withConnect, withStyles } from "../../../HOCs";
+import { selectNavigation } from "../../../selectors/app";
 
-const InfoPaneItem = ({ content, Icon, styles, editing }) => (
+const InfoPaneItem = ({ content, Icon, styles, editing, navigation }) => (
   <View style={styles.container}>
     <View style={styles.leftItems}>
       <View style={styles.iconContainer}>
@@ -14,12 +15,24 @@ const InfoPaneItem = ({ content, Icon, styles, editing }) => (
       <Text style={styles.text}>{content}</Text>
       </View>
     <View>
-      { editing && <MaterialIcons name="edit" size={28} style={styles.edit} /> }
+      { editing && (
+        <TouchableHighlight
+          onPress={() => navigation.navigate('edit')}
+        >
+          <MaterialIcons name="edit" size={28} style={styles.edit} />
+        </TouchableHighlight>
+      )
+      }
     </View>
   </View>
 );
 
+const propMap = {
+  navigation: selectNavigation,
+};
+
 export default compose(
+  withConnect(propMap, {}),
   withStyles({
     container: {
       display: "flex",
@@ -47,5 +60,5 @@ export default compose(
     edit: {
       opacity: 0.2
     }
-  })
+  }),
 )(InfoPaneItem);

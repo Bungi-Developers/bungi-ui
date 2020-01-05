@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Text, View, Button } from "react-native";
 import { compose } from "redux";
 import { useQuery } from "@apollo/react-hooks";
-import {  withStyles } from "../../HOCs";
+import { withConnect, withStyles } from "../../HOCs";
 import USERS_QUERY from "./query";
 import UserProfile from "../../templates/UserProfile";
 import ButtonBar from "./ButtonBar";
+import { setNavigation as setNavigationAction } from "../../action-creators/app";
 
-const Discover = ({ styles }) => {
+const Discover = ({ styles, navigation, setNavigation }) => {
   const [fetched, setFetched] = useState(true);
   const { loading, error, data, refetch } = useQuery(USERS_QUERY);
+
+  setNavigation(navigation);
 
   const refetchWithTimeout = () => {
     setFetched(false);
@@ -51,6 +54,10 @@ const Discover = ({ styles }) => {
   );
 };
 
+const actionMap = {
+  setNavigation: setNavigationAction
+};
+
 export default compose(
   withStyles({
     container: {
@@ -63,4 +70,5 @@ export default compose(
       justifyContent: "center"
     }
   }),
+  withConnect({}, actionMap)
 )(Discover);

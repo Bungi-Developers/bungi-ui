@@ -1,1 +1,2 @@
 export const SET_EDITING = "SET_EDITING";
+export const SET_NAVIGATION = "SET_NAVIGATION";

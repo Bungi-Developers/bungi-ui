@@ -6,4 +6,5 @@ import routes from "./routes";
 const tabConfig = {};
 
 const Navigator = createBottomTabNavigator(routes, tabConfig);
+
 export default createAppContainer(Navigator);
