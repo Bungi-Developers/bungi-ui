@@ -7,6 +7,8 @@ import UserProfile from "../../templates/UserProfile";
 const User = () => {
   const { loading, error, data } = useQuery(USER_QUERY);
 
+  console.log(data);
+
   // TODO: add loading and error components
   if (loading) {
     return <Text>Loading</Text>;
